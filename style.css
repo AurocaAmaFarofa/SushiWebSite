@@ -1,0 +1,374 @@
+:root{
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --cinza: #dfdfdf;
+    --rosa: #fdd9ff;
+    --rosa-claro: #ffe9fb ;
+    --sombra-preta: rgba(0, 0, 0, 0.7);
+    --sombra-preta-hover: 0 10px 30px rgba(0, 0, 0, 2);
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1, h2, h3{
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+button{
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*------------Classes do HEADER--------------*/
+
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-around;
+    gap: 300px;
+    align-items: center;
+}
+
+.Header div a{
+    font-family: 'Bebas Neue', sans-serif;
+    text-decoration: none;
+    color: var(--branco);
+    margin: 30px;
+    font-size: 40px;
+    transition: all 0.1s;
+}
+
+.Header div a:hover{
+    transition: all 0.1s;
+    color: var(--rosa);
+}
+
+.LogoSakura{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    margin-right: 300px;
+}
+
+.LogoSakuraFoto{
+    width: 80px;
+    border-radius: 100px;
+    filter: grayscale(100%);
+    transition: all 0.2s;
+}
+
+.LogoSakuraFoto:hover{
+    transition: all 0.2s;
+    filter: grayscale(0%);
+}
+
+/*-------------------------------------------------*/
+
+
+
+/*-----------------Classes do MAIN-----------------*/
+
+.Home{
+    background-color: var(--preto);
+    color: var(--branco);
+    position: relative;
+    z-index: 2;
+}
+
+.TituloPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+}
+
+.ImagemInicial{
+    width: 100%;
+    max-height: 850px;
+    opacity: 50%;
+    
+}
+
+.Subtitulo {
+    display: flex;
+    justify-content: center;
+    font-size: 20px; 
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--cinza); 
+    margin-top: 10px;
+}
+
+.FotoComidaDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.FotoComidaCarrosel{
+    overflow: hidden;
+    height: 500px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    margin: 35px;
+    margin-top: 100px;
+    transition: all 0.3s;
+}
+
+.FotoComidaCarrosel:hover{
+    transition: all 0.3s;
+    transform: translateY(10px);
+    transform: scale(1.05);
+}
+
+.FotoComida{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.QuadradoTexto{
+    background-color: var(--branco);
+    padding: 30px;
+    max-width: 500px;
+    z-index: 2;
+    margin-left: -200px; 
+    max-height: 270px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.QuadradoTexto:hover{
+    transition: all 0.3;
+    transform: translateY(-10px);
+    background-color: var(--rosa-claro);
+}
+
+.QuadradoTexto p{
+    color: var(--preto);
+}
+
+.QuadradoTexto h2{
+    font-size: 42px;
+    margin-top: 0;
+    color: var(--preto);
+}
+
+@media (max-width: 768px) {
+    .FotoComidaDiv {
+        flex-direction: column;
+    }
+    .QuadradoTexto {
+        margin-left: 0;
+        margin-top: -40px; /* Sobrepõe na vertical no celular */
+    }
+}
+
+.DeliveryCardapio{
+    background-color: var(--preto);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.DeliveryCardapio button{
+    font-size: 20px;
+    color: var(--preto);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding: 20px 70px 20px 70px;
+    border-radius: 100px;
+    border: none;
+    background-color: var(--branco);
+    transition: all 0.3s;
+}
+
+.DeliveryCardapio button:hover{
+    transition: all 0.3s;
+    background-color: var(--rosa-claro);
+}
+
+.Horarios{
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background-color: var(--preto);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.HorariosTexto{
+    color: var(--branco);
+}
+
+.HorariosTexto h2{
+    font-size: 50px;
+}
+
+.HorariosTexto h3{
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+.HorariosTexto p{
+    color: var(--cinza);
+}
+
+/*-------------------------------------------------*/
+
+
+
+
+/*---------------Classes do CARDAPIO---------------*/
+
+.Cardapio{
+    background-color: var(--branco);
+    display: grid;
+    gap: 40px;
+    padding: 50px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.ItensPedidos h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    padding-top: 100px;
+}
+
+.Entradas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: var(--rosa);
+    border: var(--preto) 2px solid;
+    background-color: var(--preto);
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.Item {
+    background: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+.Item:hover{
+    transform: translateY(-10px);
+    transition: all 0.3s;
+}
+
+.Item h3{
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+.Item img{
+    width: 290px;
+    height: 290px;
+    border: var(--rosa-claro) 4px solid;
+    border-radius: 50px;
+}
+
+.Item p{
+    font-size: 12px;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.Item span{
+    font-size: 20px;
+}
+
+.Item button{
+    margin-top: auto;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--rosa-claro);
+    color: var(--branco);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+    color: var(--preto);
+    border-radius: 50px;
+    border: none;
+    background-color: var(--branco);
+    transition: all 0.3s;
+}
+
+.Item button:hover{
+    transition: all 0.3s;
+    background-color: var(--rosa-claro);
+}
+
+.Item button:active{
+    transition: all 0.2s;
+    transform: scale(0.90);
+}
+
+.DeliveryCardapio button:hover{
+    transition: all 0.3s;
+    background-color: var(--rosa-claro);
+}
+
+.Item button p{
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    margin: 0px 100px 0px 100px;
+}
+
+@media (max-width: 768px) {
+    .Cardapio {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*-------------------------------------------------*/
