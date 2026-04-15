@@ -498,12 +498,26 @@ header::before {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.Item.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .Item:hover {
-  transform: translateY(-10px);
-  transition: all 0.3s;
+  transform: translateY(-5px) scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+.Item.finished:hover {
+  transform: translateY(-8px) scale(1.04);
+  transition: transform 0.2s;
 }
 
 .Item h3 {
@@ -571,6 +585,53 @@ header::before {
   .Cardapio {
     grid-template-columns: 1fr;
   }
+}
+
+/*-------------------------------------------------*/
+/*-----------------Footer--------------------------*/
+
+footer {
+  background-color: var(--preto);
+  color: var(--branco);
+  padding: 40px;
+}
+
+.ContainerFooter {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.ContainerFooter a {
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.KASASAKURA {
+  display: flex;
+  flex-direction: column;
+  gap: 40px !important;
+}
+
+.LinksFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.IconesFooter {
+  display: flex;
+  gap: 10px;
+}
+
+.Suporte {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.NosContate h2 {
+  letter-spacing: 1px;
 }
 
 /*-------------------------------------------------*/
