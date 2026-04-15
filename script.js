@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
           item.classList.add('show')
 
           setTimeout(() => {
-            item.style.transitionDelay = '0s' // 👈 REMOVE O DELAY
+            item.style.transitionDelay = '0s'
             item.classList.add('finished')
           }, 300)
         }
