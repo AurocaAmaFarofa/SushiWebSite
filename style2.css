@@ -39,7 +39,7 @@ header::before {
   z-index: -10;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 1) 0%,
+    rgb(0, 0, 0) 0%,
     rgba(0, 0, 0, 0.95) 20%,
     rgba(0, 0, 0, 0.85) 40%,
     rgba(0, 0, 0, 0.6) 60%,
@@ -47,6 +47,16 @@ header::before {
     rgba(0, 0, 0, 0.1) 90%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+@media (max-width: 768px) {
+  .Header {
+    display: flex;
+  }
+
+  .LogoSakura {
+    margin: 0 !important;
+  }
 }
 
 .Header {
@@ -95,6 +105,7 @@ header::before {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+  min-height: 57vh;
 }
 
 #lista {
@@ -104,13 +115,21 @@ header::before {
 }
 
 .item-carrinho {
-  background: #1e1e1e;
+  background: var(--preto);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   transition: 0.25s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.item-carrinho.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .item-carrinho:hover {
@@ -119,6 +138,7 @@ header::before {
 }
 
 .item-carrinho h3 {
+  color: var(--branco);
   font-size: 22px;
   letter-spacing: 1px;
 }
@@ -134,30 +154,168 @@ header::before {
   color: var(--rosa);
 }
 
-button {
-  padding: 12px 30px;
-  border: none;
-  background: var(--rosa-claro);
+.remover {
+  font-size: 20px;
   color: var(--preto);
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--branco);
+  transition: all 0.2s;
   cursor: pointer;
-  transition: 0.3s;
-  font-weight: 500;
-  font-size: 16px;
+  max-width: 200px;
+  margin: 0 auto;
 }
 
-button:hover {
+.remover:hover {
   background: var(--rosa);
-  transform: scale(1.05);
-}
-
-button {
-  display: block;
-  margin: 30px auto;
 }
 
 .vazio {
   text-align: center;
-  color: var(--cinza);
+  color: var(--preto);
   margin-top: 50px;
   font-size: 18px;
+}
+
+/*---------------Footer--------------*/
+
+footer {
+  background-color: var(--preto);
+  color: var(--branco);
+  padding: 37.5px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+  }
+
+  .ContainerFooter {
+    display: flex !important;
+    flex-direction: column;
+    gap: 50px !important;
+  }
+
+  .KASASAKURA {
+    margin-left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  .LinksFooter {
+    margin-left: 0 !important;
+    width: 50% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    font-size: clamp(8px, 4vw, 15px);
+  }
+
+  .Suporte {
+    margin-left: 0 !important;
+    width: 50% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    font-size: clamp(8px, 4vw, 15px);
+  }
+
+  .NosContate {
+    margin-left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    word-break: break-word;
+  }
+
+  .LinksPequenos {
+    display: flex !important;
+    width: 100% !important;
+  }
+}
+
+.ContainerFooter {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.LinksPequenos {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.ContainerFooter a {
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.KASASAKURA {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 25%;
+  margin-left: 20px;
+  font-size: clamp(5px, 5vw, 18px);
+}
+
+.KASASAKURA h1 {
+  letter-spacing: 1px;
+}
+
+.KASASAKURA a {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.KASASAKURA p {
+  word-break: break-all;
+}
+
+.LinksFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.LinksFooter a {
+  width: 24%;
+}
+
+.IconesFooter {
+  display: flex;
+  gap: 10px;
+}
+
+.Suporte {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.Suporte a {
+  width: 24%;
+}
+
+.NosContate {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin-left: 20px;
+  gap: 20px !important;
+}
+
+.NosContate h2 {
+  letter-spacing: 1px;
+  word-break: break-all;
 }

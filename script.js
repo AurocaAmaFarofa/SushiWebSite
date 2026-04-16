@@ -46,6 +46,26 @@ document.addEventListener('DOMContentLoaded', () => {
   items.forEach((item) => observer.observe(item))
 })
 
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visibles = entries.filter((entry) => entry.isIntersecting)
+
+    visibles.forEach((entry, index) => {
+      const item = entry.target
+
+      if (!item.classList.contains('show')) {
+        item.style.transitionDelay = `${index * 0.1}s`
+        item.classList.add('show')
+
+        setTimeout(() => {
+          item.style.transitionDelay = '0s'
+        }, 300)
+      }
+    })
+  },
+  { threshold: 0.2 },
+)
+
 let itemAtual = null
 
 const botoes = document.querySelectorAll('.Item button')
@@ -102,8 +122,6 @@ if (botaoAdicionar) {
 
     localStorage.setItem('carrinho', JSON.stringify(carrinho))
 
-    alert('Item adicionado ao pedido!')
-
     modal.classList.remove('active')
   })
 }
@@ -112,13 +130,23 @@ function irParaCarrinho() {
   window.location.href = 'carrinho.html'
 }
 
+function removerItem(index) {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []
+
+  carrinho.splice(index, 1)
+
+  localStorage.setItem('carrinho', JSON.stringify(carrinho))
+
+  location.reload()
+}
+
 if (lista) {
   const carrinho = JSON.parse(localStorage.getItem('carrinho')) || []
 
   if (carrinho.length === 0) {
     lista.innerHTML = '<p class="vazio">Seu carrinho está vazio</p>'
   } else {
-    carrinho.forEach((item) => {
+    carrinho.forEach((item, index) => {
       const div = document.createElement('div')
       div.classList.add('item-carrinho')
 
@@ -126,9 +154,32 @@ if (lista) {
         <h3>${item.nome}</h3>
         <p>${item.descricao}</p>
         <span>${item.preco}</span>
+        <button class="remover">Remover</button>
       `
 
+      const btn = div.querySelector('.remover')
+
+      btn.addEventListener('click', () => {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []
+
+        carrinho.splice(index, 1)
+
+        localStorage.setItem('carrinho', JSON.stringify(carrinho))
+
+        div.style.opacity = '0'
+        div.style.transform = 'translateY(30px)'
+
+        setTimeout(() => {
+          div.remove()
+        }, 200)
+
+        if (carrinho.length === 0) {
+          lista.innerHTML = '<p class="vazio">Seu carrinho está vazio</p>'
+        }
+      })
+
       lista.appendChild(div)
+      observer.observe(div)
     })
   }
 }
