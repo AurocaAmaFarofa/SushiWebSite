@@ -1,0 +1,163 @@
+:root {
+  --preto: #000;
+  --branco: #fff;
+  --cinza: #bfbfbf;
+  --rosa: #fdd9ff;
+  --rosa-claro: #ffe9fb;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--branco);
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: -10;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.95) 20%,
+    rgba(0, 0, 0, 0.85) 40%,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.3) 80%,
+    rgba(0, 0, 0, 0.1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.Header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Header div a {
+  font-family: 'Bebas Neue', sans-serif;
+  text-decoration: none;
+  color: var(--branco);
+  margin: 30px;
+  font-size: 40px;
+  transition: all 0.1s;
+}
+
+.Header div a:hover {
+  transition: all 0.1s;
+  color: var(--rosa);
+}
+
+.LogoSakura {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-right: 300px;
+}
+
+.LogoSakuraFoto {
+  width: 80px;
+  border-radius: 100px;
+  filter: grayscale(100%);
+  transition: all 0.2s;
+}
+
+.LogoSakuraFoto:hover {
+  transition: all 0.2s;
+  filter: grayscale(0%);
+}
+
+.main {
+  margin-top: 120px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+#lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-carrinho {
+  background: #1e1e1e;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.25s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.item-carrinho:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.item-carrinho h3 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.item-carrinho p {
+  font-size: 14px;
+  color: var(--cinza);
+}
+
+.item-carrinho span {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--rosa);
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  background: var(--rosa-claro);
+  color: var(--preto);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+button:hover {
+  background: var(--rosa);
+  transform: scale(1.05);
+}
+
+button {
+  display: block;
+  margin: 30px auto;
+}
+
+.vazio {
+  text-align: center;
+  color: var(--cinza);
+  margin-top: 50px;
+  font-size: 18px;
+}

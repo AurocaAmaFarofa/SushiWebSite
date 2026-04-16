@@ -23,7 +23,9 @@
   </head>
   <body>
     <!--Adicionar Algo que no carrosel mostre promoções ou ofertas do dia conforme o usuario iria trocar-->
-    <!--Adicionar Animações quando o site carregar-->
+    <!--Adicionar em JS um popup quando vc clica em alguma opção de comida, aparecendo as mesmas informações porém em um tamanho maior-->
+    <!--Botão delivery funcional, levando pra uma pagina diferente onde ira ter as opções que o usuario escolheu-->
+    <!--Fazer uma função que armazena os itens escolhidos do cardapio e criar um botão que finaliza o pedido levando ele a uma pagina diferente onde ira para o pagamento-->
 
     <i class="fa-brands fa-whatsapp" id="whatsapp"></i>
 
@@ -40,7 +42,7 @@
         <div>
           <nav>
             <a href="index.html">Home</a>
-            <a href="#Cardapio">Cardapio</a>
+            <a href="carrinho.html">Carrinho</a>
           </nav>
         </div>
       </div>
@@ -98,10 +100,9 @@
 
       <div class="DeliveryCardapio">
         <div>
-          <button>Delivery</button>
-        </div>
-        <div>
-          <button>Cardapio</button>
+          <button onclick="window.location.href = 'carrinho.html'">
+            Carrinho
+          </button>
         </div>
       </div>
 
@@ -460,6 +461,7 @@
           <button><p>Pedir</p></button>
         </div>
       </div>
+      <button onclick="irParaCarrinho()">Ver Pedido</button>
 
       <footer>
         <div class="ContainerFooter">
@@ -467,17 +469,27 @@
             <h1>Kasa Sakura</h1>
             <p>akjshfkajdhfkajhfdkajhdfkajhsfkajhfkjahdfkjahdfkjahdkfjah</p>
             <div class="IconesFooter">
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-facebook-f"></i>
+              <a
+                class="fa-brands fa-instagram"
+                href="https://www.instagram.com/kasa.sakura/"
+                target="_blank"
+              ></a>
+              <a
+                class="fa-brands fa-facebook-f"
+                href="https://www.instagram.com/kasa.sakura/"
+                target="_blank"
+              ></a>
             </div>
           </div>
-          <div class="LinksFooter">
-            <a>Home</a>
-            <a>Cardapio</a>
-          </div>
-          <div class="Suporte">
-            <a href="">FAQ</a>
-            <a href="">AFAD</a>
+          <div class="LinksPequenos">
+            <div class="LinksFooter">
+              <a href="index.html">Home</a>
+              <a href="index.html">Cardapio</a>
+            </div>
+            <div class="Suporte">
+              <a href="">FAQ</a>
+              <a href="">AFAD</a>
+            </div>
           </div>
           <div class="NosContate">
             <h2>49 9 9999-9999</h2>
@@ -487,5 +499,14 @@
         </div>
       </footer>
     </main>
+    <div class="Modal" id="modal">
+      <div class="ModalContent">
+        <span id="fechar">X</span>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalDescricao"></p>
+        <span id="modalPreco"></span>
+        <button id="adicionarCarrinho">Adicionar ao pedido</button>
+      </div>
+    </div>
   </body>
 </html>

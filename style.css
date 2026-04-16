@@ -596,10 +596,69 @@ footer {
   padding: 40px;
 }
 
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+  }
+
+  .ContainerFooter {
+    display: flex !important;
+    flex-direction: column;
+    gap: 50px !important;
+  }
+
+  .KASASAKURA {
+    margin-left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  .LinksFooter {
+    margin-left: 0 !important;
+    width: 50% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    font-size: clamp(8px, 4vw, 15px);
+  }
+
+  .Suporte {
+    margin-left: 0 !important;
+    width: 50% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    font-size: clamp(8px, 4vw, 15px);
+  }
+
+  .NosContate {
+    margin-left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    gap: 10px !important;
+    align-items: center !important;
+    word-break: break-word;
+  }
+
+  .LinksPequenos {
+    display: flex !important;
+    width: 100% !important;
+  }
+}
+
 .ContainerFooter {
   display: flex;
   gap: 20px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.LinksPequenos {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 }
 
 .ContainerFooter a {
@@ -610,13 +669,36 @@ footer {
 .KASASAKURA {
   display: flex;
   flex-direction: column;
-  gap: 40px !important;
+  align-items: flex-start;
+  gap: 40px;
+  width: 25%;
+  margin-left: 20px;
+  font-size: clamp(5px, 5vw, 18px);
+}
+
+.KASASAKURA h1 {
+  letter-spacing: 1px;
+}
+
+.KASASAKURA a {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.KASASAKURA p {
+  word-break: break-all;
 }
 
 .LinksFooter {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.LinksFooter a {
+  width: 24%;
 }
 
 .IconesFooter {
@@ -628,10 +710,55 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.Suporte a {
+  width: 24%;
+}
+
+.NosContate {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin-left: 20px;
+  gap: 20px !important;
 }
 
 .NosContate h2 {
   letter-spacing: 1px;
+  word-break: break-all;
+}
+
+/*-------------------------------------------------*/
+/*------------------Apenas teste-------------------*/
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalContent {
+  background: white;
+  padding: 30px;
+  max-width: 400px;
+}
+
+.ModalContent span {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.Modal.active {
+  display: flex;
 }
 
 /*-------------------------------------------------*/
