@@ -587,6 +587,31 @@ header::before {
   }
 }
 
+.IrProCarrinho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+
+.IrProCarrinho button {
+  background-color: var(--preto);
+  color: var(--branco);
+  padding: 10px;
+  border: none;
+  font-size: 22px;
+  transition: all 0.3s;
+  border: var(--branco) 2px solid;
+}
+
+.IrProCarrinho button:hover {
+  transform: scale(1.05);
+  background-color: var(--branco);
+  color: var(--preto);
+  border: var(--preto) 2px solid;
+  transition: all 0.3s;
+}
+
 /*-------------------------------------------------*/
 /*-----------------Footer--------------------------*/
 
