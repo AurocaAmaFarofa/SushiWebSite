@@ -693,6 +693,11 @@ footer {
   text-decoration: none;
 }
 
+.ContainerFooter h3 {
+  letter-spacing: 1px;
+  font-size: 26px;
+}
+
 .KASASAKURA {
   display: flex;
   flex-direction: column;
@@ -713,7 +718,7 @@ footer {
 }
 
 .KASASAKURA p {
-  word-break: break-all;
+  word-break: normal;
 }
 
 .LinksFooter {
