@@ -160,10 +160,10 @@ header::before {
   color: var(--rosa);
 }
 
-.remover {
+.botoes-item button{
   font-size: 20px;
   color: var(--preto);
-  padding: 10px 20px;
+  padding: 5px 15px;
   border: none;
   background-color: var(--branco);
   transition: all 0.2s;
@@ -172,7 +172,7 @@ header::before {
   margin: 0 auto;
 }
 
-.remover:hover {
+.botoes-item button:hover {
   background: var(--rosa);
 }
 
@@ -181,6 +181,22 @@ header::before {
   color: var(--preto);
   margin-top: 50px;
   font-size: 18px;
+}
+
+/*----------Main Total---------------*/
+
+.Total span, strong{
+  color: var(--preto);
+  font-size: clamp(10px, 5vw, 25px);
+}
+
+.Total h2{
+  color: var(--preto);
+  font-size: clamp(10px, 5vw, 40px);
+}
+
+.Total{
+  margin-bottom: 20px;
 }
 
 /*---------------Footer--------------*/
